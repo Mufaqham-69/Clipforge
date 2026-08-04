@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+.env
+backend/uploads/
+backend/clips/
+node_modules/
+.next/
+frontend/.env
+*.db

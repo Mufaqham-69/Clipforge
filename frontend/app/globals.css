@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-void text-ink font-body;
+  }
+  h1, h2, h3 {
+    @apply font-display;
+  }
+  :focus-visible {
+    outline: 2px solid theme("colors.lime");
+    outline-offset: 2px;
+  }
+}
+
+/* Signature element: the episode waveform strip. A row of static bars gives
+   the episode a sense of shape/rhythm even without real audio decoding;
+   clip regions are overlaid as highlighted blocks at their true time
+   fraction, so the storyboard reads as "where in the episode", not just
+   a list. */
+.waveform-track {
+  @apply relative flex items-center gap-[2px] h-16 bg-surface rounded-sm overflow-hidden px-2;
+}
+.waveform-bar {
+  @apply bg-line rounded-full flex-1;
+  min-width: 2px;
+}
+.waveform-clip-region {
+  @apply absolute top-0 bottom-0 bg-lime/25 border-x-2 border-lime rounded-sm cursor-pointer
+         hover:bg-lime/40 transition-colors;
+}
+
+.hook-badge {
+  @apply inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full font-mono text-[10px]
+         uppercase tracking-wider font-semibold border;
+}
