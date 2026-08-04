@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply bg-void text-ink font-body;
+    @apply bg-void text-ink font-body selection:bg-lime selection:text-void;
   }
   h1, h2, h3 {
     @apply font-display;
@@ -13,26 +13,79 @@
     outline: 2px solid theme("colors.lime");
     outline-offset: 2px;
   }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-void;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-line rounded-full hover:bg-ink-dim/40 transition-colors;
+  }
 }
 
-/* Signature element: the episode waveform strip. A row of static bars gives
-   the episode a sense of shape/rhythm even without real audio decoding;
-   clip regions are overlaid as highlighted blocks at their true time
-   fraction, so the storyboard reads as "where in the episode", not just
-   a list. */
+/* Background grid & radial glows for the premium SaaS look */
+.mesh-bg {
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(123, 92, 250, 0.15) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(212, 255, 63, 0.15) 0px, transparent 50%);
+}
+
+.dashboard-mesh-bg {
+  background-image: 
+    radial-gradient(at 100% 0%, rgba(123, 92, 250, 0.08) 0px, transparent 40%),
+    radial-gradient(at 0% 100%, rgba(212, 255, 63, 0.05) 0px, transparent 45%);
+}
+
+.auth-mesh-bg {
+  background-image:
+    radial-gradient(circle at 30% 30%, rgba(123, 92, 250, 0.2) 0px, transparent 60%);
+}
+
+.gradient-text {
+  @apply bg-gradient-to-r from-lime to-violet bg-clip-text text-transparent;
+}
+
+.gradient-border-hover {
+  @apply relative transition-all duration-300;
+}
+.gradient-border-hover::before {
+  content: '';
+  @apply absolute inset-0 -z-10 rounded-md opacity-0 transition-opacity duration-300;
+  padding: 1px;
+  background: linear-gradient(135deg, theme('colors.lime'), theme('colors.violet'));
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: xor;
+  -webkit-mask-composite: xor;
+}
+.gradient-border-hover:hover::before {
+  @apply opacity-100;
+}
+
+/* Signature element: the episode waveform strip. */
 .waveform-track {
-  @apply relative flex items-center gap-[2px] h-16 bg-surface rounded-sm overflow-hidden px-2;
+  @apply relative flex items-center gap-[2.5px] h-16 bg-surface-raised border border-line rounded-md overflow-hidden px-3 transition-all duration-300;
 }
 .waveform-bar {
-  @apply bg-line rounded-full flex-1;
+  @apply bg-line rounded-full flex-1 transition-all duration-300;
   min-width: 2px;
 }
 .waveform-clip-region {
-  @apply absolute top-0 bottom-0 bg-lime/25 border-x-2 border-lime rounded-sm cursor-pointer
-         hover:bg-lime/40 transition-colors;
+  @apply absolute top-0 bottom-0 bg-lime/10 border-x-2 border-lime cursor-pointer
+         hover:bg-lime/25 transition-all duration-300;
+}
+
+/* Timeline Playhead line */
+.waveform-playhead {
+  @apply absolute top-0 bottom-0 w-[2px] bg-violet pointer-events-none transition-all duration-75 z-10;
+  box-shadow: 0 0 8px theme('colors.violet');
 }
 
 .hook-badge {
-  @apply inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full font-mono text-[10px]
-         uppercase tracking-wider font-semibold border;
+  @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full font-mono text-[9px]
+         uppercase tracking-widest font-bold border transition-colors duration-200;
 }
+
