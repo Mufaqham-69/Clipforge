@@ -51,13 +51,11 @@ export function ClipCard({
     setTimeout(() => setIsCopied(false), 2000);
   };
 
-  // Determine standard score default if confidence not set
   const viralityScore = clip.confidence ? Math.round(clip.confidence * 100) : 85;
 
   return (
     <div className="bg-surface border border-line rounded-xl p-5 hover:border-line/80 transition-all duration-300 relative group flex flex-col justify-between min-h-[220px]">
       <div>
-        {/* Clip meta timeline & badge row */}
         <div className="flex items-start justify-between gap-3 mb-3">
           <button
             onClick={() => onSeek?.(clip.start_seconds)}
@@ -76,12 +74,10 @@ export function ClipCard({
           </span>
         </div>
 
-        {/* Title */}
         <h3 className="font-display text-base font-bold text-ink mb-1 mt-1 group-hover:text-lime transition-colors">
           {clip.title}
         </h3>
 
-        {/* Caption panel */}
         <div className="bg-void border border-line rounded-lg p-3 my-3 relative group/caption">
           <p className="text-xs text-ink-dim leading-relaxed pr-8">{clip.caption}</p>
           <button
@@ -101,17 +97,14 @@ export function ClipCard({
           </button>
         </div>
 
-        {/* Hashtags */}
         {clip.hashtags && clip.hashtags.length > 0 && (
           <p className="font-mono text-[10px] text-violet mb-3 tracking-wide">
             {clip.hashtags.map((h) => `#${h}`).join(" ")}
           </p>
         )}
 
-        {/* Virality score and collapsible analysis details */}
         <div className="border-t border-line/50 pt-3 mt-3">
           <div className="flex items-center justify-between">
-            {/* Virality bar indicator */}
             <div className="flex items-center gap-2 flex-1 max-w-[160px]">
               <span className="text-[10px] font-mono text-ink-dim whitespace-nowrap">Virality Score:</span>
               <div className="w-full bg-void rounded-full h-1.5 overflow-hidden">
@@ -123,7 +116,6 @@ export function ClipCard({
               <span className="text-[10px] font-mono font-bold text-lime">{viralityScore}%</span>
             </div>
 
-            {/* Expander toggle */}
             <button
               onClick={() => setShowReasoning(!showReasoning)}
               className="text-[10px] text-ink-dim hover:text-ink flex items-center gap-1 font-mono uppercase tracking-wide py-1"
@@ -149,9 +141,7 @@ export function ClipCard({
         </div>
       </div>
 
-      {/* Footer rendering controls row */}
       <div className="flex items-center justify-between border-t border-line/60 pt-4 mt-4">
-        {/* Intended platforms */}
         <div className="flex gap-1">
           {clip.platforms.map((p) => (
             <span key={p} className="font-mono text-[9px] text-ink-dim border border-line rounded px-1.5 py-0.5 bg-surface-raised uppercase tracking-wide">
@@ -160,7 +150,6 @@ export function ClipCard({
           ))}
         </div>
 
-        {/* Dynamic button renders */}
         {clip.render_status === "ready" ? (
           <button
             onClick={handleDownload}

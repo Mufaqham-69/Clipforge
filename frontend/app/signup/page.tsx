@@ -37,13 +37,10 @@ export default function SignupPage() {
 
   return (
     <main className="grid md:grid-cols-12 min-h-screen text-ink bg-void overflow-hidden">
-      {/* Left panel - Branding and Testimonials */}
       <div className="hidden md:flex md:col-span-5 relative bg-surface border-r border-line p-12 flex-col justify-between overflow-hidden">
-        {/* Glowing background circles */}
         <div className="absolute top-[-10%] left-[-10%] w-[80%] h-[80%] rounded-full bg-violet/10 blur-[120px] pointer-events-none" />
         <div className="absolute bottom-[-10%] right-[-10%] w-[60%] h-[60%] rounded-full bg-lime/5 blur-[100px] pointer-events-none" />
 
-        {/* Top brand indicator */}
         <Link href="/" className="flex items-center gap-2 relative z-10">
           <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-lime to-violet flex items-center justify-center font-bold text-void">
             CF
@@ -53,7 +50,6 @@ export default function SignupPage() {
           </span>
         </Link>
 
-        {/* Value Proposition */}
         <div className="relative z-10 space-y-6">
           <span className="text-lime font-mono text-xs uppercase tracking-wider block">
             ★ Create Your Workspace
@@ -67,7 +63,6 @@ export default function SignupPage() {
           </div>
         </div>
 
-        {/* Feature quick checkmarks list */}
         <div className="relative z-10 space-y-3.5 border-t border-line/60 pt-8">
           <div className="flex items-center gap-3">
             <svg className="w-4 h-4 text-lime" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -90,13 +85,11 @@ export default function SignupPage() {
         </div>
       </div>
 
-      {/* Right panel - Form Sign up */}
       <div className="col-span-12 md:col-span-7 flex flex-col justify-center px-6 sm:px-16 md:px-24 py-12 relative">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#16161D_1px,transparent_1px),linear-gradient(to_bottom,#16161D_1px,transparent_1px)] bg-[size:3rem_3rem] -z-10 opacity-10 pointer-events-none md:hidden" />
 
         <div className="max-w-md w-full mx-auto space-y-6 animate-slide-up">
           <div>
-            {/* Logo display on mobile */}
             <div className="flex items-center gap-2 mb-6 md:hidden">
               <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-lime to-violet flex items-center justify-center font-bold text-void">
                 CF
@@ -189,7 +182,7 @@ export default function SignupPage() {
 
             <button
               disabled={busy}
-              className="w-full bg-lime text-void font-bold px-5 py-3 rounded-lg hover:bg-lime/90 transition-all duration-300 disabled:opacity-50 flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(212,255,63,0.15)] hover:shadow-[0_0_20px_rgba(212,255,63,0.3)] text-sm"
+              className="w-full bg-lime text-void font-bold px-5 py-3 rounded-lg hover:bg-lime/90 transition-all duration-300 disabled:opacity-50 flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(212,255,63,0.15)] text-sm"
             >
               {busy ? (
                 <>

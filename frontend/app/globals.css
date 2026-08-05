@@ -14,7 +14,6 @@
     outline-offset: 2px;
   }
 
-  /* Custom scrollbar */
   ::-webkit-scrollbar {
     width: 6px;
     height: 6px;
@@ -27,7 +26,6 @@
   }
 }
 
-/* Background grid & radial glows for the premium SaaS look */
 .mesh-bg {
   background-image: 
     radial-gradient(at 0% 0%, rgba(123, 92, 250, 0.15) 0px, transparent 50%),
@@ -65,7 +63,6 @@
   @apply opacity-100;
 }
 
-/* Signature element: the episode waveform strip. */
 .waveform-track {
   @apply relative flex items-center gap-[2.5px] h-16 bg-surface-raised border border-line rounded-md overflow-hidden px-3 transition-all duration-300;
 }
@@ -78,7 +75,6 @@
          hover:bg-lime/25 transition-all duration-300;
 }
 
-/* Timeline Playhead line */
 .waveform-playhead {
   @apply absolute top-0 bottom-0 w-[2px] bg-violet pointer-events-none transition-all duration-75 z-10;
   box-shadow: 0 0 8px theme('colors.violet');

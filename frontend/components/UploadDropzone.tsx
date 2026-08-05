@@ -46,7 +46,6 @@ export function UploadDropzone({ onUpload }: { onUpload: (file: File) => Promise
       />
 
       <div className="space-y-4 max-w-sm mx-auto">
-        {/* Upload icon visual */}
         <div className="mx-auto w-12 h-12 rounded-full bg-void border border-line flex items-center justify-center text-ink-dim/80">
           {busy ? (
             <svg className="animate-spin h-5 w-5 text-lime" fill="none" viewBox="0 0 24 24">

@@ -28,7 +28,6 @@ export default function PricingPage() {
 
   return (
     <main className="mesh-bg min-h-screen text-ink pb-20">
-      {/* Top Navbar */}
       <nav className="max-w-6xl mx-auto px-6 py-6 flex items-center justify-between border-b border-line/30 mb-16">
         <Link href="/" className="flex items-center gap-2">
           <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-lime to-violet flex items-center justify-center font-bold text-void">
@@ -54,7 +53,6 @@ export default function PricingPage() {
         </div>
       </nav>
 
-      {/* Main Pricing content */}
       <div className="max-w-4xl mx-auto px-6 text-center">
         <h1 className="font-display text-4xl md:text-5xl mb-4 font-bold tracking-tight">
           Simple pricing. <span className="gradient-text">Complete automation.</span>
@@ -63,7 +61,6 @@ export default function PricingPage() {
           Unlimited transcripts. Unlimited storyboard clips. Standardized pricing built for creators.
         </p>
 
-        {/* Toggle Switch */}
         <div className="flex items-center justify-center gap-4 mb-12">
           <span className={`text-sm ${!isAnnual ? "text-ink font-semibold" : "text-ink-dim"}`}>
             Billed Monthly
@@ -86,9 +83,7 @@ export default function PricingPage() {
           </span>
         </div>
 
-        {/* Pricing Card */}
         <div className="relative max-w-md mx-auto bg-surface border border-lime/30 rounded-xl p-8 md:p-10 shadow-[0_0_40px_rgba(212,255,63,0.04)] mb-20 group">
-          {/* Best Value floating badge */}
           <div className="absolute top-0 left-1/2 -translate-y-1/2 -translate-x-1/2 bg-gradient-to-r from-lime to-violet text-void text-[10px] font-black uppercase tracking-widest px-4 py-1 rounded-full shadow-lg">
             Best Value
           </div>
@@ -124,14 +119,13 @@ export default function PricingPage() {
 
           <Link
             href="/signup"
-            className="block w-full bg-lime text-void font-bold px-6 py-3.5 rounded-lg text-center hover:bg-lime/90 transition-all duration-300 shadow-[0_0_20px_rgba(212,255,63,0.1)] hover:shadow-[0_0_30px_rgba(212,255,63,0.3)] transform hover:-translate-y-0.5"
+            className="block w-full bg-lime text-void font-bold px-6 py-3.5 rounded-lg text-center hover:bg-lime/90 transition-all duration-300 shadow-[0_0_20px_rgba(212,255,63,0.1)] transform hover:-translate-y-0.5"
           >
             Start free, add card later
           </Link>
           <p className="text-[10px] text-ink-dim/60 mt-3 font-mono">1-episode free trial automatically active</p>
         </div>
 
-        {/* Pricing FAQs */}
         <div className="max-w-2xl mx-auto border-t border-line/50 pt-16">
           <h3 className="font-display text-2xl font-bold mb-8">Billing & Subscriptions FAQ</h3>
           <div className="space-y-4 text-left">
